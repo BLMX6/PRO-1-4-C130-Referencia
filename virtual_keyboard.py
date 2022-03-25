@@ -1,7 +1,7 @@
 import cv2
 import mediapipe as mp
 from pynput.keyboard import Key, Controller
-
+import pyautogui
 keyboard = Controller()
 
 cap = cv2.VideoCapture(0)
@@ -67,6 +67,14 @@ def countFingers(image, hand_landmarks, handNo=0):
             if finger_tip_x > width-50:
                 print("Play Forward")
                 keyboard.press(Key.right)
+        if totalFingers == 2:
+            if  finger_tip_x < height-400:
+                print("Decrease Volume")
+                pyautogui.press("volumedown")
+
+            if finger_tip_x > height-50:
+                print("Increase volume")
+                pyautogui.press("volumeup")
         
         
 # Define a function to 
