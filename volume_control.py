@@ -58,7 +58,7 @@ def countFingers(image, hand_landmarks, handNo=0):
 
         # Move Video FORWARD & BACKWARDS    
         finger_tip_x = (landmarks[8].x)*width
- 
+
         if totalFingers == 1:
             if  finger_tip_x < width-400:
                 print("Play Backward")
@@ -67,6 +67,8 @@ def countFingers(image, hand_landmarks, handNo=0):
             if finger_tip_x > width-50:
                 print("Play Forward")
                 keyboard.press(Key.right)
+        # Increase and decrease volume
+        finger_tip_y = (landmarks[8].y)*height
         if totalFingers == 2:
             if  finger_tip_y < height-400:
                 print("Decrease Volume")
