@@ -68,11 +68,11 @@ def countFingers(image, hand_landmarks, handNo=0):
                 print("Play Forward")
                 keyboard.press(Key.right)
         if totalFingers == 2:
-            if  finger_tip_x < height-400:
+            if  finger_tip_y < height-400:
                 print("Decrease Volume")
                 pyautogui.press("volumedown")
 
-            if finger_tip_x > height-50:
+            if finger_tip_y > height-50:
                 print("Increase volume")
                 pyautogui.press("volumeup")
         
