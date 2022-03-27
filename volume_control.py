@@ -70,13 +70,13 @@ def countFingers(image, hand_landmarks, handNo=0):
         # Increase and decrease volume
         finger_tip_y = (landmarks[8].y)*height
         if totalFingers == 2:
-            if  finger_tip_y < height-400:
-                print("Decrease Volume")
-                pyautogui.press("volumedown")
-
-            if finger_tip_y > height-50:
-                print("Increase volume")
+            if  finger_tip_y < height-250:
+                print("Increase Volume")
                 pyautogui.press("volumeup")
+
+            if finger_tip_y > height-250:
+                print("Decrease volume ")
+                pyautogui.press("volumedown")
         
         
 # Define a function to 
